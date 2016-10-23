@@ -28,7 +28,7 @@ case $PLATFORM in
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
         ;;
-    linux-armhf)
+    linux-arm)
         make -j4
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
