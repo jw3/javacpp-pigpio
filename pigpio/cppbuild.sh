@@ -8,7 +8,7 @@ if [[ -z "$PLATFORM" ]]; then
 fi
 
 PIGPIO_VERSION=master
-download https://github.com/joan2937/pigpio/archive/master.zip pigpio-$PIGPIO_VERSION.zip
+download https://github.com/joan2937/pigpio/archive/$PIGPIO_VERSION.zip pigpio-$PIGPIO_VERSION.zip
 
 mkdir -p $PLATFORM
 cd $PLATFORM
