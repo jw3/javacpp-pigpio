@@ -11,7 +11,7 @@
 
   <groupId>org.bytedeco.javacpp-presets</groupId>
   <artifactId>pigpio</artifactId>
-  <version>0.1.56.${project.parent.version}</version>
+  <version>0.1.56-${project.parent.version}</version>
   <packaging>jar</packaging>
   <name>JavaCPP Presets for pigpio</name>
 
@@ -25,6 +25,17 @@
       <artifactId>javacpp</artifactId>
     </dependency>
   </dependencies>
+
+  <distributionManagement>
+    <repository>
+      <id>bintray-pigpio-javacpp-releases</id>
+      <url>https://api.bintray.com/maven/jw3/maven/pigpio-javacpp/;publish=1</url>
+    </repository>
+    <snapshotRepository>
+      <id>bintray-pigpio-javacpp-snapshots</id>
+      <url>https://api.bintray.com/maven/jw3/maven-snapshots/pigpio-javacpp/;publish=1</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
     <plugins>
@@ -95,5 +106,14 @@
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>sonatype-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+  </repositories>
 
 </project>
