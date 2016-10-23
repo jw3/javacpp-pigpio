@@ -7,8 +7,8 @@ if [[ -z "$PLATFORM" ]]; then
     exit
 fi
 
-PIGPIO_VERSION=master
-download https://github.com/joan2937/pigpio/archive/$PIGPIO_VERSION.zip pigpio-$PIGPIO_VERSION.zip
+PIGPIO_VERSION=jni-pigpio
+download https://github.com/jw3/pigpio/archive/$PIGPIO_VERSION.zip pigpio-$PIGPIO_VERSION.zip
 
 mkdir -p $PLATFORM
 cd $PLATFORM
