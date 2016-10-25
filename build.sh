@@ -2,6 +2,7 @@
 
 readonly javacpp_dir=/tmp/javacpp
 readonly presets_dir=/tmp/javacpp-presets
+export JAVA_HOME=/usr/local/java
 
 git clone https://github.com/bytedeco/javacpp ${javacpp_dir}
 git clone https://github.com/bytedeco/javacpp-presets ${presets_dir}
