@@ -18,18 +18,8 @@ unzip -o ../pigpio-$PIGPIO_VERSION.zip
 cd pigpio-$PIGPIO_VERSION
 
 case $PLATFORM in
-    linux-x86)
-        make -j4
-        cp pigpio*.h ../include
-        cp libpigpio*.so ../lib
-        ;;
-    linux-x86_64)
-        make -j4
-        cp pigpio*.h ../include
-        cp libpigpio*.so ../lib
-        ;;
     linux-arm)
-        make -j4
+        make -j4 CFLAGS='-marm -march=armv8-a -mtune=cortex-a53 -mfpu=neon-fp-armv8 -mhard-float -mfloat-abi=hard -O3 -s'
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
         ;;
