@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
-    <version>1.2.5-SNAPSHOT</version>
+    <version>1.3.3-SNAPSHOT</version>
   </parent>
 
   <groupId>org.bytedeco.javacpp-presets</groupId>
@@ -14,10 +14,6 @@
   <version>0.1.56-${project.parent.version}</version>
   <packaging>jar</packaging>
   <name>JavaCPP Presets for pigpio</name>
-
-  <properties>
-    <javacpp.platform.oldcompiler>${javacpp.platform.compiler}</javacpp.platform.oldcompiler>
-  </properties>
 
   <dependencies>
     <dependency>
@@ -40,10 +36,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
         <artifactId>maven-resources-plugin</artifactId>
       </plugin>
       <plugin>
@@ -52,45 +44,6 @@
       <plugin>
         <groupId>org.bytedeco</groupId>
         <artifactId>javacpp</artifactId>
-        <configuration>
-          <propertyKeysAndValues>
-            <property>
-              <name>platform.root</name>
-              <value>${javacpp.platform.root}</value>
-            </property>
-            <property>
-              <name>platform.compiler</name>
-              <value>${javacpp.platform.oldcompiler}</value>
-            </property>
-          </propertyKeysAndValues>
-          <classPaths>
-            <classPath>${basedir}/../opencv/target/classes/</classPath>
-            <classPath>${project.build.outputDirectory}</classPath>
-          </classPaths>
-          <includePaths>
-            <includePath>${basedir}/cppbuild/${javacpp.platform}/include/</includePath>
-          </includePaths>
-          <linkPaths>
-            <linkPath>${basedir}/cppbuild/${javacpp.platform}/lib/</linkPath>
-          </linkPaths>
-          <preloadPaths>
-            <preloadPath>${basedir}/cppbuild/${javacpp.platform}/bin/</preloadPath>
-          </preloadPaths>
-        </configuration>
-        <executions>
-          <execution>
-            <id>javacpp.parser</id>
-            <configuration>
-              <classOrPackageName>org.bytedeco.javacpp.presets.pigpio</classOrPackageName>
-            </configuration>
-          </execution>
-          <execution>
-            <id>javacpp.compiler</id>
-            <configuration>
-              <classOrPackageName>org.bytedeco.javacpp.pigpio</classOrPackageName>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
