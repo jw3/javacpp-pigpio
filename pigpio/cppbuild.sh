@@ -7,7 +7,7 @@ if [[ -z "$PLATFORM" ]]; then
     exit
 fi
 
-PIGPIO_VERSION=master
+PIGPIO_VERSION=1aa4cca8a69d4f8f8ce198178dbd7f436b4f503c
 download https://github.com/joan2937/pigpio/archive/$PIGPIO_VERSION.zip pigpio-$PIGPIO_VERSION.zip
 
 mkdir -p $PLATFORM
