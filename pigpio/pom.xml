@@ -11,7 +11,7 @@
 
   <groupId>org.bytedeco.javacpp-presets</groupId>
   <artifactId>pigpio</artifactId>
-  <version>0.0.64-${project.parent.version}</version>
+  <version>0.0.67-${project.parent.version}</version>
   <packaging>jar</packaging>
   <name>JavaCPP Presets for pigpio</name>
 
