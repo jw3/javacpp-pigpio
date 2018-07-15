@@ -26,17 +26,17 @@ cd "pigpio-$PIGPIO_VERSION"
 
 case ${PLATFORM} in
     linux-x86)
-        make -j4
+        make -j4 CFLAGS=-DEMBEDDED_IN_VM
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
         ;;
     linux-x86_64)
-        make -j4
+        make -j4 CFLAGS=-DEMBEDDED_IN_VM
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
         ;;
     linux-arm)
-        make -j4
+        make -j4 CFLAGS=-DEMBEDDED_IN_VM
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
         ;;
