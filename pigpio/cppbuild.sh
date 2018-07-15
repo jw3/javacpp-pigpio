@@ -7,17 +7,22 @@ if [[ -z "$PLATFORM" ]]; then
     exit
 fi
 
-PIGPIO_VERSION_NAME="V67"
-PIGPIO_VERSION_SHA="934874be2fa34a525beb33e8cb75e378df587860"
-echo "downloading pigpio $PIGPIO_VERSION_NAME"
-download https://github.com/joan2937/pigpio/archive/${PIGPIO_VERSION_SHA}.zip pigpio-${PIGPIO_VERSION_SHA}.zip
+readonly INSTALL_PATH=$(pwd)
+mkdir -p "$PLATFORM/include" "$PLATFORM/lib"
 
-mkdir -p ${PLATFORM}
-cd ${PLATFORM}
-INSTALL_PATH=`pwd`
-mkdir -p include lib
-unzip -o ../pigpio-${PIGPIO_VERSION_SHA}.zip
-cd pigpio-${PIGPIO_VERSION_SHA}
+PIGPIO_VERSION="V67"
+echo "downloading pigpio $PIGPIO_VERSION"
+
+if [[ -z "$PIGPIO_REPO" ]]; then
+  download "https://github.com/joan2937/pigpio/archive/$PIGPIO_VERSION.zip" "pigpio-$PIGPIO_VERSION.zip"
+  cd "$PLATFORM"
+  unzip -o "../pigpio-$PIGPIO_VERSION.zip"
+else
+  cd "$PLATFORM"
+  git clone "$PIGPIO_REPO" "pigpio-$PIGPIO_VERSION"
+fi
+
+cd "pigpio-$PIGPIO_VERSION"
 
 case ${PLATFORM} in
     linux-x86)
