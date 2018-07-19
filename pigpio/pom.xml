@@ -63,10 +63,6 @@
               <value>${javacpp.platform.oldcompiler}</value>
             </property>
           </propertyKeysAndValues>
-          <classPaths>
-            <classPath>${basedir}/../opencv/target/classes/</classPath>
-            <classPath>${project.build.outputDirectory}</classPath>
-          </classPaths>
           <includePaths>
             <includePath>${basedir}/cppbuild/${javacpp.platform}/include/</includePath>
           </includePaths>
