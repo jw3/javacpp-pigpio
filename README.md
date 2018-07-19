@@ -22,3 +22,15 @@ JAVACPP_PRESETS_REPO=file:///dev/code/community/javacpp-presets \
 PIGPIO_REPO=/dev/code/community/pigpio \
 ./build.sh clean
 ```
+
+### ubuntu cross compilation
+
+Packages
+
+- `libc6-dev-armhf-cross`
+- `gcc-arm-linux-gnueabihf`
+- `linux-libc-dev-armhf-cross`
+
+Exports
+
+- `GCC_ARM_PREFIX=arm-linux-gnueabihf-`

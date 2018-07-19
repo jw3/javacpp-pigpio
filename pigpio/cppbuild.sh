@@ -25,13 +25,10 @@ fi
 cd "pigpio-$PIGPIO_VERSION"
 
 case ${PLATFORM} in
-    linux-x86)
-        make -j4 CFLAGS=-DEMBEDDED_IN_VM
-        cp pigpio*.h ../include
-        cp libpigpio*.so ../lib
-        ;;
-    linux-x86_64)
-        make -j4 CFLAGS=-DEMBEDDED_IN_VM
+    linux-x86*)
+        armcc="${GCC_ARM_PREFIX:-}"
+        if [[ ! -z "$armcc" ]]; then armcc="$armcc"; fi
+        make -j4 CFLAGS=-DEMBEDDED_IN_VM CROSS_PREFIX="$armcc"
         cp pigpio*.h ../include
         cp libpigpio*.so ../lib
         ;;
