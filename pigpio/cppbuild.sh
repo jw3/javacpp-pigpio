@@ -10,7 +10,7 @@ fi
 readonly INSTALL_PATH=$(pwd)
 mkdir -p "$PLATFORM/include" "$PLATFORM/lib"
 
-PIGPIO_VERSION="V67"
+PIGPIO_VERSION="V$PIGPIO_MAJOR_VERSION"
 echo "downloading pigpio $PIGPIO_VERSION"
 
 if [[ -z "$PIGPIO_REPO" ]]; then

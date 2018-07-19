@@ -6,12 +6,12 @@
   <parent>
     <groupId>org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
-    <version>1.4.1</version>
+    <version>__JAVACPP_VER__</version>
   </parent>
 
-  <groupId>org.bytedeco.javacpp-presets</groupId>
+  <groupId>com.github.jw3</groupId>
   <artifactId>pigpio</artifactId>
-  <version>0.0.67-${project.parent.version}</version>
+  <version>${pigpio.major}.${library.version}-${project.parent.version}</version>
   <packaging>jar</packaging>
   <name>JavaCPP Presets for pigpio</name>
 
